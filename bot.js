@@ -4,7 +4,7 @@ function createBot() {
   const bot = mineflayer.createBot({
     host: 'titancraftsmp.mcsh.io',
     port: 25565,
-    username: 'MR_BOT',
+    username: 'Itz_Don_Bot',
     version: '1.21.4',
     auth: 'offline'
   })
