@@ -4,7 +4,7 @@ function createBot() {
   const bot = mineflayer.createBot({
     host: 'titancraftsmp.mcsh.io',
     port: 25565,
-    username: 'MR_BOT2',
+    username: 'MR_BOT',
     version: '1.21.4',
     auth: 'offline'
   })
@@ -12,11 +12,19 @@ function createBot() {
   bot.on('spawn', () => {
     console.log('Bot spawned!')
     
+    // Login with AuthMe
+    setTimeout(() => {
+      bot.chat('/login 101754')
+      console.log('Logged in!')
+    }, 3000)
+
+    // Auto /home command every 30 seconds
     setInterval(() => {
       bot.chat('/home')
       console.log('Sent /home')
     }, 30000)
 
+    // Auto move
     setInterval(() => {
       bot.setControlState('jump', true)
       setTimeout(() => {
@@ -31,19 +39,17 @@ function createBot() {
 
   bot.on('kicked', (reason) => {
     console.log('Kicked:', reason)
-    console.log('Reconnecting in 5 seconds...')
-    setTimeout(createBot, 5000)
+    setTimeout(createBot, 30000)
   })
 
   bot.on('error', (err) => {
     console.log('Error:', err)
-    console.log('Reconnecting in 5 seconds...')
-    setTimeout(createBot, 5000)
+    setTimeout(createBot, 30000)
   })
 
   bot.on('end', () => {
-    console.log('Disconnected! Reconnecting in 5 seconds...')
-    setTimeout(createBot, 5000)
+    console.log('Disconnected! Reconnecting in 30 seconds...')
+    setTimeout(createBot, 30000)
   })
 }
 
