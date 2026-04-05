@@ -2,8 +2,8 @@ const mineflayer = require('mineflayer')
 
 function createBot() {
   const bot = mineflayer.createBot({
-    host: 'titancraftsmp.mcsh.io',
-    port: 25565,
+    host: 'PRIVATESMPRRIAL.aternos.me:45655',
+    port: 45655,
     username: 'MR_BOT',
     version: '1.21.4',
     auth: 'offline'
