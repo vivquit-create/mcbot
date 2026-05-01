@@ -6,7 +6,7 @@ function createBot() {
     port: 30706,
     username: 'MR_BOT',
     version: '1.21.11',
-    auth: 'offline'
+    auth: 'online'
   })
 
   bot.on('spawn', () => {
